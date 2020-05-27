@@ -1,0 +1,102 @@
+// Params
+$edge-radius: 10px;
+$btn-input-height: 60px;
+
+// Colors
+$digit-color: rgb(199, 199, 199);
+$operator-color: orange;
+$mod-colors: rgb(131, 131, 131);
+$display--color: white;
+$calculator-color: #ffe9cf;
+
+body {
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	background-color: grey;
+}
+
+body,
+.calculator,
+.input-row,
+.c-btn,
+.btn-row {
+	display: flex;
+}
+
+.c-btn,
+.input-row {
+	border: solid 1px rgba(128, 128, 128, 0.493);
+	color: rgb(44, 44, 44);
+	font-size: 23px;
+	align-items: center;
+}
+
+.calculator {
+	padding: 20px;
+	background-color: $calculator-color;
+	border-radius: $edge-radius;
+	flex-direction: column;
+	justify-content: center;
+
+	.input-row {
+		width: 270px;
+		height: $btn-input-height;
+		background-color: $display--color;
+		margin: 10px auto 15px auto;
+		padding-right: 10px;
+		border-radius: $edge-radius;
+
+		.input {
+			margin-left: auto;
+		}
+	}
+
+	.btn-row {
+		.c-btn {
+			width: 60px;
+			height: $btn-input-height;
+			margin: 5px;
+			justify-content: center;
+			border-radius: $edge-radius;
+			transition-timing-function: ease-in-out;
+			transition-duration: 0.1s;
+		}
+
+		.c-btn:hover {
+			cursor: pointer;
+			width: 62px;
+			height: calc($btn-input-height + 4);
+			margin: 4px;
+			box-shadow: 2px 2px 5px grey;
+		}
+
+		.zero {
+			width: 130px;
+		}
+
+		.zero:hover {
+			width: 132px;
+			margin: 4px;
+		}
+	}
+
+	.digit,
+	.point {
+		background-color: $digit-color;
+	}
+	.divide,
+	.mult,
+	.plus,
+	.minus,
+	.equals {
+		background-color: $operator-color;
+	}
+
+	.clear,
+	.negative,
+	.percent {
+		background-color: $mod-colors;
+	}
+}
